@@ -49,3 +49,14 @@
     height: 18px;
     object-fit: contain;
 }
+
+.review-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        
+        .star-filled {
+            color: #FACC15;
+        }

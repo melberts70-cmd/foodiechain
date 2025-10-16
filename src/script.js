@@ -86,7 +86,7 @@ function createRestaurantCard(restaurant) {
     const starIcon = `<svg class="w-4 h-4 text-loyalty-gold fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>`;
 
     const statusBadge = restaurant.isOpen 
-        ? `<span class="status-badge open flex items-center gap-2 ">
+        ? `<span class="status-badge open flex items-center gap-1">
                 <img src="asset/images/clock.png" alt="Open" class="clock-icon w-3 h-3 color-white ">
                 Open
            </span>` 
@@ -95,18 +95,24 @@ function createRestaurantCard(restaurant) {
                 Closed
            </span>`
            ;
+           
     // Tags for the bottom section (limited to 3 for clean layout)
     const tagElements = restaurant.tags.slice(0, 3).map(tag => 
         `<span class="bg-tag-bg text-gray-700 text-xs px-2 py-1 rounded-full whitespace-nowrap transition duration-200 hover:bg-gray-200">${tag}</span>`
     ).join('');
 
     return `
-        <div class="bg-card-bg rounded-xl overflow-hidden figma-shadow transition duration-300 cursor-pointer border border-gray-100">
+        <div class="bg-card-bg rounded-xl overflow-hidden figma-shadow transition duration-300 cursor-pointer border border-gray-100 restaurant-card" data-id="${restaurant.id}">
             <div class="relative h-40 w-full">
                 <img src="${restaurant.imageUrl}" alt="${restaurant.name}" onerror="this.onerror=null;this.src='https://placehold.co/400x250/F8D8D8/333?text=Restaurant+Image';" class="w-full h-full object-cover">
                 <div class="absolute top-2 left-2 p-1 bg-black bg-opacity-60 rounded-full text-white text-xs font-medium">
                     ${statusBadge}
                 </div>
+                <button class="absolute top-2 right-2 bg-white rounded-full p-2 shadow-lg hover:bg-gray-50 transition">
+                    <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </button>
             </div>
             <div class="p-4 flex flex-col justify-between h-auto">
                 <div>
@@ -188,6 +194,14 @@ function renderRestaurants(filterTag) {
 
         if (filteredRestaurants.length > 0) {
             restaurantGrid.innerHTML = filteredRestaurants.map(createRestaurantCard).join('');
+            
+            // Add click event listeners to restaurant cards
+            document.querySelectorAll('.restaurant-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const restaurantId = this.getAttribute('data-id');
+                    window.location.href = `restaurant-detail.html?id=${restaurantId}`;
+                });
+            });
         } else {
             restaurantGrid.innerHTML = '<div class="col-span-full text-center p-8 text-gray-500 text-lg">No restaurants matching the tag "'+ filterTag +'" were found.</div>';
         }

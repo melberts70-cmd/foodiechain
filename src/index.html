@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Chain Local Listings</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-white': '#FFFFFF', 
+                        'foodie-brand': '#000000ff',
+                        'accent-orange': '#FF7F50',
+                        'loyalty-gold': '#FACC15',
+                        'profile': '#FAFAFA',
+                        'card-bg': '#FFFFFF',
+                        'tag-bg': '#F3F4F6',
+                        'open-green': '#22C55E',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 min-h-screen font-sans text-gray-800">
+
+    <!-- Top Navigation/Header Bar -->
+    <nav class="bg-primary-white shadow-md border-b border-gray-100 sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto flex items-center justify-between p-4 sm:px-6 lg:px-8">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <img src="asset/logo.svg" alt="Foodie Chain Logo" class="w-10 h-10">
+                <span class="text-xl font-extrabold text-foodie-brand hidden sm:block">Foodie Chain</span>
+            </div>
+
+            <!-- Location and Search (Centered) -->
+            <div class="flex flex-1 max-w-lg mx-4 space-x-4">
+                <div class="flex items-center text-sm text-gray-600 cursor-pointer hover:text-foodie-brand transition">
+                    <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0L6.343 16.657a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <span class="font-medium truncate hidden md:block">Baliwag, Bulacan, Philippines</span>
+                </div>
+                <div class="relative flex-1 hidden md:block">
+                    <input type="text" placeholder="Search local restaurants..." class="w-full py-2 pl-10 pr-4 border border-gray-200 rounded-lg focus:ring-foodie-brand focus:border-foodie-brand text-sm transition">
+                    <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+            </div>
+
+            <!-- User Actions -->
+            <div class="flex items-center space-x-3">
+                <button class="flex items-center gap-1 bg-accent-orange text-white px-3 py-1.5 rounded-xl text-sm font-medium hover:bg-accent-orange/90 transition shadow-md">
+                    <span class="hidden sm:inline text-foodie-brand">My Favorites</span>
+                    <svg class="w-5 h-5 mr-1" fill="none" stroke="black" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    
+                </button>
+                <div class="w-8 h-8 rounded-full bg-profile flex items-center justify-center text-sm borderfont-semibold border border-gray-200 text-white">
+                    <img src="asset/images/profile.png" alt="User" class="w-5 h-5">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <h2 class="text-2xl font-bold mb-4">Local Chain Restaurants</h2>
+
+        <!-- Filter/Category Tags -->
+        <div id="category-filters" class="flex space-x-3 overflow-x-auto whitespace-nowrap pb-4 mb-8">
+            <!-- Filter buttons will be inserted here by JS -->
+        </div>
+
+        <!-- Restaurant Grid -->
+        <main id="restaurant-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Restaurant Cards will be dynamically inserted here by JS -->
+            <div class="text-center p-4 col-span-full" id="loading-indicator">
+                <p class="text-lg text-gray-500">Loading local food chains...</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

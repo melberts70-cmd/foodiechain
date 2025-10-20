@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodie Chain Local Listings</title>
-    <!-- Load Tailwind CSS -->
+    <title>My Favorites - Foodie Chain</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -56,10 +55,10 @@
             <div class="flex items-center space-x-3">
                 <button onclick="window.location.href='favorites.html'" class="flex items-center gap-1 bg-accent-orange text-white px-3 py-1.5 rounded-xl text-sm font-medium hover:bg-accent-orange/90 transition shadow-md relative">
                     <span class="hidden sm:inline text-foodie-brand">My Favorites</span>
-                    <svg class="w-5 h-5 mr-1" fill="none" stroke="black" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                    <span id="fav-count" class="hidden absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">0</span>
+                    <svg class="w-5 h-5" fill="none" stroke="black" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    <span id="fav-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">0</span>
                 </button>
-                <div onclick="window.location.href='profile.html'" class="w-8 h-8 rounded-full bg-profile flex items-center justify-center text-sm borderfont-semibold border border-gray-200 text-white cursor-pointer hover:ring-2 hover:ring-accent-black transition">
+                <div class="w-8 h-8 rounded-full bg-profile flex items-center justify-center text-sm border font-semibold border-gray-200 text-white">
                     <img src="asset/images/profile.png" alt="User" class="w-5 h-5">
                 </div>
             </div>
@@ -69,22 +68,37 @@
     <!-- Main Content Area -->
     <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
         
-        <h2 class="text-2xl font-bold mb-4">Local Chain Restaurants</h2>
-
-        <!-- Filter/Category Tags -->
-        <div id="category-filters" class="flex space-x-3 overflow-x-auto whitespace-nowrap pb-4 mb-8">
-            <!-- Filter buttons will be inserted here by JS -->
+        <!-- Page Header -->
+        <div class="mb-6">
+            <button onclick="window.location.href='index.html'" class="flex items-center text-gray-600 hover:text-gray-900 mb-4 transition">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                <span class="font-medium">Back to restaurants</span>
+            </button>
+            
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Your Favorites</h1>
+            <p class="text-gray-600">Restaurants you've saved for later</p>
         </div>
 
-        <!-- Restaurant Grid -->
-        <main id="restaurant-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <!-- Restaurant Cards will be dynamically inserted here by JS -->
-            <div class="text-center p-4 col-span-full" id="loading-indicator">
-                <p class="text-lg text-gray-500">Loading local food chains...</p>
-            </div>
+        <!-- Empty State (shown when no favorites) -->
+        <div id="empty-state" class="hidden text-center py-20">
+            <svg class="w-24 h-24 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+            <h2 class="text-2xl font-bold text-gray-700 mb-2">No favorites yet</h2>
+            <p class="text-gray-500 mb-6">Start adding restaurants to your favorites to see them here</p>
+            <button onclick="window.location.href='index.html'" class="bg-accent-orange text-foodie-brand px-6 py-3 rounded-xl font-semibold hover:bg-accent-orange/90 transition shadow-md">
+                Browse Restaurants
+            </button>
+        </div>
+
+        <!-- Favorites Grid -->
+        <main id="favorites-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Favorite Restaurant Cards will be dynamically inserted here by JS -->
         </main>
     </div>
 
-    <script src="script.js"></script>
+    <script src="favorites.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ const MOCK_RESTAURANTS = [
         price: "PPP", 
         tags: ["Spicy", "Family-Friendly", "Quick-Bite"], 
         isOpen: true, 
-        imageUrl: "/asset/images/jabi.png" 
+        imageUrl: "src/asset/images/jabi.png" 
     },
     { id: 2, 
         name: "Max's Restaurant", 
@@ -20,7 +20,7 @@ const MOCK_RESTAURANTS = [
         price: "PPP", 
         tags: ["Authentic", "Family-Friendly", "Comfort-Food"], 
         isOpen: true, 
-        imageUrl: "/asset/images/kenny.png" 
+        imageUrl: "src/asset/images/kenny.png" 
     },
     { id: 3, 
         name: "D' Grill House", 
@@ -31,7 +31,7 @@ const MOCK_RESTAURANTS = [
         price: "PPP", 
         tags: ["Spicy", "Family", "Comfort-Food"], 
         isOpen: true, 
-        imageUrl: "/asset/images/gdrills.png" 
+        imageUrl: "src/asset/images/gdrills.png" 
     },
     { id: 4, 
         name: "Millhouse", 
@@ -42,7 +42,7 @@ const MOCK_RESTAURANTS = [
         price: "PPP", 
         tags: ["Family", "Comfort-Food"], 
         isOpen: true, 
-        imageUrl: "/asset/images/mill.png" 
+        imageUrl: "src/asset/images/mill.png" 
     },
     { id: 5, 
         name: "Mang Inasal - SM", 
@@ -53,7 +53,7 @@ const MOCK_RESTAURANTS = [
         price: "PPP", 
         tags: ["Spicy", "Family", "Comfort-Food"], 
         isOpen: true, 
-        imageUrl: "/asset/images/inasal.png" 
+        imageUrl: "src/asset/images/inasal.png" 
     },
     { id: 6, 
         name: "EC Cafe", 
@@ -64,7 +64,7 @@ const MOCK_RESTAURANTS = [
         price: "PPP", 
         tags: ["Family", "Comfort-Food"], 
         isOpen: true, 
-        imageUrl: "asset/images/cafe.png" 
+        imageUrl: "src/asset/images/cafe.png" 
     },
 ];
 

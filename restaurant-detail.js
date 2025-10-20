@@ -10,7 +10,7 @@ const MOCK_RESTAURANTS = [
         price: "PPP", 
         tags: ["Spicy", "Family-Friendly", "Quick-Bite"], 
         isOpen: true, 
-        imageUrl: "/asset/images/jabi.png",
+        imageUrl: "src/asset/images/jabi.png",
         reviewsList: [
             { 
                 user: "Maria S.", 
@@ -36,7 +36,7 @@ const MOCK_RESTAURANTS = [
         price: "PPP", 
         tags: ["Authentic", "Family-Friendly", "Comfort-Food"], 
         isOpen: true, 
-        imageUrl: "/asset/images/kenny.png",
+        imageUrl: "src/asset/images/kenny.png",
         reviewsList: [
             { 
                 user: "Sarah L.", 
@@ -62,7 +62,7 @@ const MOCK_RESTAURANTS = [
         price: "PPP", 
         tags: ["Spicy", "Family", "Comfort-Food"], 
         isOpen: true, 
-        imageUrl: "/asset/images/gdrills.png",
+        imageUrl: "src/asset/images/gdrills.png",
         reviewsList: [
             { 
                 user: "Anna T.", 
@@ -88,7 +88,7 @@ const MOCK_RESTAURANTS = [
         price: "PPP", 
         tags: ["Family", "Comfort-Food"], 
         isOpen: true, 
-        imageUrl: "/asset/images/mill.png",
+        imageUrl: "src/asset/images/mill.png",
         reviewsList: [
             { 
                 user: "Lisa P.", 
@@ -114,7 +114,7 @@ const MOCK_RESTAURANTS = [
         price: "PPP", 
         tags: ["Spicy", "Family", "Comfort-Food"], 
         isOpen: true, 
-        imageUrl: "/asset/images/inasal.png",
+        imageUrl: "src/asset/images/inasal.png",
         reviewsList: [
             { 
                 user: "Jenny S.", 
@@ -140,7 +140,7 @@ const MOCK_RESTAURANTS = [
         price: "PPP", 
         tags: ["Family", "Comfort-Food"], 
         isOpen: true, 
-        imageUrl: "/asset/images/cafe.png",
+        imageUrl: "src/asset/images/cafe.png",
         reviewsList: [
             { 
                 user: "Grace W.", 

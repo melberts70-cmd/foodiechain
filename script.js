@@ -141,11 +141,11 @@ function createRestaurantCard(restaurant) {
 
     const statusBadge = restaurant.isOpen 
         ? `<span class="status-badge open flex items-center gap-2 ">
-                <img src="src/asset/images/clock.png" alt="Open" class="clock-icon w-3 h-3 color-white ">
+                <img src="/src/asset/images/clock.png" alt="Open" class="clock-icon w-3 h-3 color-white ">
                 Open
            </span>` 
         : `<span class="status-badge closed">
-                <img src="src/asset/images/clock.png" alt="Open" class="clock-icon w-3 h-3">
+                <img src="/src/asset/images/clock.png" alt="Open" class="clock-icon w-3 h-3">
                 Closed
            </span>`
            ;
